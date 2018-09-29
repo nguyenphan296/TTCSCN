@@ -25,6 +25,7 @@ public class MainFrame extends javax.swing.JFrame {
         btnKhoa = new javax.swing.JButton();
         btnQLGiangVien = new javax.swing.JButton();
         btnThongKeGioDay = new javax.swing.JButton();
+        btnBaoCao = new javax.swing.JButton();
         pnlHome = new javax.swing.JPanel();
         menuBarMain = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
@@ -86,6 +87,18 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        btnBaoCao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons_baocaonew.png"))); // NOI18N
+        btnBaoCao.setText(" Báo cáo");
+        btnBaoCao.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnBaoCao.setMaximumSize(new java.awt.Dimension(101, 41));
+        btnBaoCao.setMinimumSize(new java.awt.Dimension(101, 41));
+        btnBaoCao.setPreferredSize(new java.awt.Dimension(79, 25));
+        btnBaoCao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaoCaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlLeftLayout = new javax.swing.GroupLayout(pnlLeft);
         pnlLeft.setLayout(pnlLeftLayout);
         pnlLeftLayout.setHorizontalGroup(
@@ -93,10 +106,11 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(pnlLeftLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(pnlLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnBaoCao, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnThongKeGioDay, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnQLGiangVien, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnKhoa, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         pnlLeftLayout.setVerticalGroup(
             pnlLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,7 +121,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(btnQLGiangVien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnThongKeGioDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(635, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnBaoCao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(592, Short.MAX_VALUE))
         );
 
         scrlpaneLeftAdmin.setViewportView(pnlLeft);
@@ -204,6 +220,11 @@ public class MainFrame extends javax.swing.JFrame {
         logOut();
     }//GEN-LAST:event_menuiLogoutActionPerformed
 
+    private void btnBaoCaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaoCaoActionPerformed
+        QLBaoCao pnlBaoCao=new QLBaoCao();
+        spltPane.setRightComponent(pnlBaoCao);
+    }//GEN-LAST:event_btnBaoCaoActionPerformed
+
     /*Xác nhận và đăng nhập hệ thống*/
     private void logOut() {
         if (JOptionPane.showConfirmDialog(null, "Bạn có muốn đăng xuất khỏi hệ thống ?", "Thoát", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.OK_OPTION) {
@@ -267,6 +288,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBaoCao;
     private javax.swing.JButton btnKhoa;
     private javax.swing.JButton btnQLGiangVien;
     private javax.swing.JButton btnThongKeGioDay;
